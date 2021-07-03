@@ -1,0 +1,212 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    height: 23rem;
+    position: relative;
+    transition: all .8s ease;
+
+    @include respond (tab-port) {
+        &--4,
+        &--5,
+        &--6 {
+            display: none;
+        }
+    }
+
+    &:hover {
+        height: 55rem;
+    }
+
+    &:hover &__side {
+        height: 55rem;
+    }
+
+    &__side {
+        height: 23rem;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: .3rem;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+            
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-orange-light, $color-orange-dark);
+            }
+
+            &-2 {
+                background-image: linear-gradient(to right bottom, $color-green-light, $color-green-dark);
+            }
+
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-blue-light, $color-blue-dark);
+            }
+
+            &-4 {
+                background-image: linear-gradient(to right bottom, $color-purple-light, $color-purple-dark);
+            }
+
+            &-5 {
+                background-image: linear-gradient(to right bottom, $color-pink-light, $color-pink-dark);
+            }
+
+            &-6 {
+                background-image: linear-gradient(to right bottom, $color-yellow-light, $color-yellow-dark);
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+
+    &__picture {
+
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: screen;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, $color-orange-light, $color-orange-dark), url(../img/nat-5.jpg);
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, $color-green-light, $color-green-dark), url(../img/nat-6.jpg);
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, $color-blue-light, $color-blue-dark), url(../img/nat-7.jpg);
+        }
+
+        &--4 {
+            background-image: linear-gradient(to right bottom, $color-purple-light, $color-purple-dark), url(../img/nat-7.jpg);
+        }
+
+        &--5 {
+            background-image: linear-gradient(to right bottom, $color-pink-light, $color-pink-dark), url(../img/nat-7.jpg);
+        }
+
+        &--6 {
+            background-image: linear-gradient(to right bottom, $color-yellow-light, $color-yellow-dark), url(../img/nat-7.jpg);
+        }
+    }
+
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        width: 63%;
+    }
+
+    &__heading-span {
+
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, rgba($color-orange-light, 0.85), rgba($color-orange-dark, 0.85));
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, rgba($color-green-light, 0.85), rgba($color-green-dark, 0.85));
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, rgba($color-blue-light, 0.85), rgba($color-blue-dark, 0.85));
+        }
+
+        &--4 {
+            background-image: linear-gradient(to right bottom, rgba($color-purple-light, 0.85), rgba($color-purple-dark, 0.85));
+        }
+        
+        &--5 {
+            background-image: linear-gradient(to right bottom, rgba($color-pink-light, 0.85), rgba($color-pink-dark, 0.85));
+        }
+
+        &--6 {
+            background-image: linear-gradient(to right bottom, rgba($color-yellow-light, 0.85), rgba($color-yellow-dark, 0.85));
+        }
+    }
+
+    &__details {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        font-size: 1.8rem;
+        color: $color-white;
+        text-align: center;
+    }
+
+    @include respond (tab-port) {
+        height: auto;
+        border-radius: .3rem;
+        background-color: $color-white;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15); 
+
+        &:hover {
+            height: auto;
+        }
+    
+        &:hover &__side {
+            height: auto;
+        }
+
+        &__side {
+            height: auto;
+            position: relative;
+            box-shadow: none;
+            border-radius: 0;
+
+            &--back {
+                transform: rotateY(0);
+                margin-top: -3.6rem;
+                
+                clip-path: polygon(0 3.6rem, 100% 0, 100% 100%, 0 100%);
+                -webkit-clip-path: polygon(0 3.6rem, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        &:hover &__side--front {
+            transform: rotateY(0);
+        }
+
+        &__heading {
+            top: 10rem;
+        }
+
+        &__details {
+            padding: 7rem 4rem 4rem 4rem;
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            width: 100%;
+            font-size: 1.6rem;
+            color: $color-white;
+        }
+    }
+}
