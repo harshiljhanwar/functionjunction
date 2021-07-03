@@ -452,6 +452,9 @@ body {
     background-position: center; }
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
+    @media (max-width: 56.25em) {
+      .feature-box:hover {
+        transform: translateY(0) scale(1); } }
 
 .form__group:not(:last-child) {
   margin-bottom: 2rem; }
@@ -590,17 +593,29 @@ body {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
     transition: all .5s .2s; }
+    @media (max-width: 56.25em) {
+      .popup__content {
+        width: 90%;
+        height: auto; } }
   .popup:target .popup__content {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1); }
   .popup__left {
     width: 33.33333%;
     display: table-cell; }
+    @media (max-width: 75em) {
+      .popup__left {
+        display: none; } }
   .popup__right {
     width: 66.66667%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media (max-width: 75em) {
+      .popup__right {
+        background-image: url(../../img/marriage.jpg);
+        background-size: cover;
+        background-position: center; } }
   .popup__img {
     display: block;
     width: 100%; }
@@ -611,6 +626,12 @@ body {
     column-gap: 4rem;
     column-rule: 2px solid #eee;
     hyphens: auto; }
+    @media (max-width: 75em) {
+      .popup__text {
+        color: white; } }
+    @media (max-width: 37.5em) {
+      .popup__text {
+        column-count: 1; } }
 
 .story {
   width: 75%;
